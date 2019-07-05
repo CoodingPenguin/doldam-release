@@ -1,0 +1,12 @@
+1. SpawnObject
+- Obstacle 1 : ³ª¹«
+- Obstacle 2 : µ¹
+- SnowMan
+
+2. Particle
+- rockParticle
+- feverParticle
+- snowmanParticle
+- snowmanParticle2
+- snowParticle
+- treeParticle
