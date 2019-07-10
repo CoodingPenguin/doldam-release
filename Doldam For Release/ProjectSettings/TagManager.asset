@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - SideWall
+  - Tree
+  - Rock
+  - Snowman
   layers:
   - Default
   - TransparentFX
