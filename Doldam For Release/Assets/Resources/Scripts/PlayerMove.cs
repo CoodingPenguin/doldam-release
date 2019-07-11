@@ -120,7 +120,7 @@ public class PlayerMove : MonoBehaviour
                 if (transform.localScale.x >= scaleAtFever - 1)
                 {
                     GameManager.instance.feverState = 2;
-                    transform.position = new Vector2(0, transform.position.y);
+                    transform.position = new Vector3(0, transform.position.y, -1);
                     transform.rotation = Quaternion.identity;
                 }
                 GameManager.instance.SetScrollSpeed(5);
@@ -167,7 +167,8 @@ public class PlayerMove : MonoBehaviour
                     if (GameManager.instance.feverState == 0)
                     {
                         if (col.tag == "Snowman")
-                        {              
+                        {
+                            Debug.Log("Snowman과 충돌");
                             GameObject particle = Instantiate(snowmanParticle, col.transform.position, Quaternion.identity);
                             Destroy(particle, 2f);
                             obstacleScroll.HitByPlayer();
@@ -177,7 +178,7 @@ public class PlayerMove : MonoBehaviour
                         }
                         else if (col.tag == "Rock" || col.tag == "Tree")
                         {
-                            
+                            Debug.Log("장애물과 충돌");
                             GameObject particle = Instantiate(SnowParticle, col.transform.position, Quaternion.identity);
                             particle.transform.localScale = particle.transform.localScale * ballScale / 4;
                             Destroy(particle, 2f);

@@ -71,7 +71,7 @@ public class AnimationScript : MonoBehaviour
                 frame++;
 
 
-                Debug.Log("sprites.Length : " + sprites.Length);
+                //Debug.Log("sprites.Length : " + sprites.Length);
 
                 if (loop)
                     frame %= sprites.Length;
