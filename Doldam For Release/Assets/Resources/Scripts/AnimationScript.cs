@@ -46,6 +46,8 @@ public class AnimationScript : MonoBehaviour
         if(gameManager.gameState == GameManager.GameState.PLAY) 
         {
             deltaTime += Time.deltaTime;
+
+            // 스프라이트를 몇 프레임마다 바꿀 것인가
             frameSeconds = Mathf.PI * sprites[0].rect.width / gameManager.GetScrollSpeed() / sprites.Length / 9.6f / 2.5f;
 
             if (PlayerMove.instance.ballScale > coveredScale && !isSetCovered)
@@ -70,16 +72,18 @@ public class AnimationScript : MonoBehaviour
                 deltaTime -= frameSeconds;
                 frame++;
 
+                //Debug.Log("deltaTime : " + deltaTime);
+                //Debug.Log("frame : " + frame);
 
                 //Debug.Log("sprites.Length : " + sprites.Length);
 
-                if (loop)
-                    frame %= sprites.Length;
-                else if (frame >= sprites.Length)
+                if (frame >= sprites.Length - 1)
+                {
                     frame %= sprites.Length - 1;
+                }
             }
 
-            Debug.Log("frame : " + frame);
+
             spriteRenderer.sprite = sprites[frame];
         }
     }
